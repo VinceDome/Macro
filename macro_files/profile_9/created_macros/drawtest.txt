@@ -1,0 +1,4 @@
+cursor onenote_draw.png 1 1 1365 363
+click
+cursor onenote_pen.png 0 0 1365 307
+click

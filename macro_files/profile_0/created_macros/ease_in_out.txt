@@ -1,0 +1,22 @@
+nodelete
+cursor 3726 403
+right
+cursor 3670 480
+click
+cursor 3726 353
+right
+cursor 3698 430
+click
+cursor 3700 358
+click
+wait 0.1
+cursor 3726 403
+right
+cursor 3670 480
+click
+cursor 3726 353
+right
+cursor 3698 430
+click
+cursor 3747 403
+click

@@ -1,0 +1,32 @@
+cursor 1248 10
+click
+cursor 468 752
+click
+cursor 1258 22
+click
+cursor 455 740
+click
+cursor 1255 7
+click
+cursor 465 749
+click
+cursor 1256 10
+click
+cursor 477 745
+click
+cursor 1255 11
+click
+cursor 461 744
+click
+cursor 1250 9
+click
+cursor 485 732
+click
+cursor 1229 28
+click
+cursor 487 728
+click
+cursor 1255 13
+click
+cursor 456 753
+click

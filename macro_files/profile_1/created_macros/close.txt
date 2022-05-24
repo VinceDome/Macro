@@ -1,0 +1,3 @@
+cursor 1344 7
+click
+cursor 682 383

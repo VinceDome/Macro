@@ -1,0 +1,6 @@
+wait until messenger_hover_trans.png 103 54 1026 655
+cursor messenger_hover_trans.png 103 54 1026 655
+click
+wait until messenger_heart.png 168 111 996 686
+cursor messenger_heart.png 168 111 996 686
+click

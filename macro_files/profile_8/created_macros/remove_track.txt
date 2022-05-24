@@ -1,0 +1,9 @@
+cursor 736 1848
+wait 0.1
+click
+cursor 731 1643
+wait 0.1
+click
+cursor 1488 1119
+wait 0.2
+click

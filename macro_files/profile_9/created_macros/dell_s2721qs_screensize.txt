@@ -1,0 +1,9 @@
+cursor 0 0
+cursor 3839 2159
+cursor 3839 2159
+cursor 3839 2047
+cursor 3839 2159
+cursor 3839 2159
+cursor 3839 2159
+cursor 3839 2159
+cursor 3839 2159

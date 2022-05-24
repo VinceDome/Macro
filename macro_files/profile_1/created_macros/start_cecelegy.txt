@@ -1,0 +1,9 @@
+cursor 20 754
+click
+wait until windows_menu.png 0 400 300 700
+type cmd
+type enter
+wait until cmd.png 50 49 544 429
+type cd C:\Users\user\OneDrive - Alternatív Közgazdasági Gimnázium\HOME\Programming\Python\Discord bots\Cecelégy enter
+type py cecelegy.py enter
+cursor 682 383

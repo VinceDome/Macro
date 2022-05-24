@@ -1,0 +1,935 @@
+cursor onenote_draw.png 1 1 1365 363
+click
+cursor onenote_pen.png 0 0 1365 307
+click
+cursor onenote_fullscreen.png 500 0 1365 307
+click
+wait 0.5
+cursor 361 612
+wait 1
+down left
+cursor 300 300
+wait 1
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001
+cursor 361 612
+wait 0.0001
+cursor 363 522
+wait 0.0001
+cursor 383 472
+wait 0.0001
+cursor 445 395
+wait 0.0001
+cursor 537 337
+wait 0.0001
+cursor 631 296
+wait 0.0001
+cursor 844 298
+wait 0.0001
+cursor 855 1304
+wait 0.0001
+cursor 959 409
+wait 0.0001
+cursor 971 505
+wait 0.0001
+cursor 794 607
+wait 0.0001
+cursor 649 637
+wait 0.0001
+cursor 539 635
+wait 0.0001
+cursor 456 572
+wait 0.0001

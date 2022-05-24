@@ -1,0 +1,4 @@
+cursor messenger.png 0 729 1365 767
+cursor messenger_not.png 0 729 1365 767
+click
+cursor 350 383

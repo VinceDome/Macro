@@ -1,0 +1,13 @@
+d open_discord
+o open_opera
+v open_vscode
+n open_onenote
+c start_cecelegy
+i opera_1
+p opera_2
+m open_messenger
+t open_teams
+r send_to_robot
+s start_program_vscode
+x close
+h heart_mess

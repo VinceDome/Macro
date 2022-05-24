@@ -1,0 +1,3 @@
+cursor 383 2114
+click
+cursor 1919 1076

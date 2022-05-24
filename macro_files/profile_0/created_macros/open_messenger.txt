@@ -1,0 +1,3 @@
+cursor 996 2113
+click
+cursor 1919 1076

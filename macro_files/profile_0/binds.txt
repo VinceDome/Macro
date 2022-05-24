@@ -1,0 +1,10 @@
+d open_discord
+v open_vscode
+o open_opera
+c start_cecelegy
+e open_davinci
+m open_messenger
+f open_discord_omenscreen
+s start_program_vscode
+a start_amy
+í ease_in_out

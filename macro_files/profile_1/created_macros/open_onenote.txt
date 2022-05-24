@@ -1,0 +1,3 @@
+cursor onenote.png 0 729 1365 767
+click
+cursor 682 383

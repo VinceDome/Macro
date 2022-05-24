@@ -1,0 +1,8 @@
+cursor 123 2128
+click
+type cmd
+type enter
+wait 0.3
+type cd C:\Users\barth\OneDrive - Alternatív Közgazdasági Gimnázium\HOME\Programming\Python\Discord bots\Cecelégy enter
+type py cecelegy.py enter
+cursor 1919 1076

@@ -1,0 +1,11 @@
+type bind d "set speed 0.5" enter
+wait 0.5
+type bind f "set speed 1" enter
+wait 0.5
+type bind g "set speed 2" enter
+wait 0.5
+type bind h "set speed 4" enter
+wait 0.5
+type bind r "set speed 0.1" enter
+wait 0.5
+type toggle_inputs enter
