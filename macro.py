@@ -1,4 +1,3 @@
-from pyautogui import *
 import pyautogui
 import time, os
 import keyboard
@@ -45,11 +44,6 @@ except FileNotFoundError:
     profile = None
 
 
-"""
-bindsF = open(os.getcwd()+"/macro_files/binds.txt", "a+", encoding="utf-8")
-bindsF.close()
-"""
-
 if win32api.GetKeyState(win32con.VK_CAPITAL) == 1:
     pyautogui.press("capslock")
 os.system("cls")
@@ -75,17 +69,29 @@ if record:
     rightdown = False
     actioncounter = 0
     print("epik macroboi\n-----------------------\nv = setcursor\nc = click\nx = setcursor and click\nb = move cursor by\nl = left[down&up]\nr = right[down&up]\nt = type\nw = wait\nq = save\n-----------------------")
+    
+    print("Which profile do you want to record to?")
     while True:
-        recordingProfile = input("Which profile do you want to record to? ")
-        if profile in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]:
+        time.sleep(0.2)
+        recordingProfile = keyboard.read_key()
+        if recordingProfile in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]:
             break
+    
+    print(recordingProfile)
     if profile == None:
         profile = recordingProfile
+
+    """
+    while True:
+        recordingProfile = input("Which profile do you want to record to? ")
+        if recordingProfile in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]:
+            break
     
+    """
 
 
     
-
+    keyboard.press_and_release("backspace")
     filename = input("What should be the name of the new bind? ")
 
     createIfNot(os.getcwd()+f"/macro_files/profile_{recordingProfile}", "folder")
@@ -292,6 +298,17 @@ if record:
             #endregion
 
             bindsF = open(os.getcwd()+f"/macro_files/profile_{recordingProfile}/binds.txt", "a+", encoding="utf-8")
+
+            print("What do you want to bind this to?")
+            while True:
+                time.sleep(0.2)
+                bindButton = keyboard.read_key()
+                if bindButton != keyboard.read_key():
+                    break
+                print(bindButton)
+                    
+
+            """
             while True:
                 time.sleep(0.2)
                 keyboard.press_and_release("backspace")
@@ -299,6 +316,7 @@ if record:
                 if len(bindButton) == 1:
                     break
                 print("lol only one button")
+            """
             if not empty:
                 bindsF.write("\n")
             bindsF.write(f"{bindButton} {filename}")
@@ -382,8 +400,10 @@ else:
                         individualBind = i.split(" ")
                         binds[individualBind[0]] = individualBind[1]
                     #endregion
+                    
                     os.system("cls")
                     print(f"Profile [{profile}]\nBinds:\n", binds)
+                    
                     time.sleep(0.2)
 
             for i in binds:
@@ -515,6 +535,3 @@ else:
                             
                     time.sleep(0.2)
                     #endregion
-
-
-
