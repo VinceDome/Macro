@@ -47,24 +47,33 @@ except FileNotFoundError:
 if win32api.GetKeyState(win32con.VK_CAPITAL) == 1:
     pyautogui.press("capslock")
 os.system("cls")
-print("-----------------------\nrecord (r) or playback (p)?\n-----------------------")
+print("----------------------------------------------\nrecord (r), delete (d), playback (p) or quit (q)?\n----------------------------------------------")
 if profile != None: 
     while True:
         if keyboard.is_pressed("r"):
             time.sleep(0.01)
             keyboard.press_and_release("backspace")
-            record = True
+            mode = "r"
             break
         elif keyboard.is_pressed("p"):
             time.sleep(0.01)
             keyboard.press_and_release("backspace")
-            record = False
+            mode = "p"
             break
+        elif keyboard.is_pressed("d"):
+            time.sleep(0.01)
+            keyboard.press_and_release("backspace")
+            mode = "d"
+            break
+        elif keyboard.is_pressed("q"):
+            time.sleep(0.01)
+            keyboard.press_and_release("backspace")
+            exit()
 else:
-    record = True
+    mode = "r"
 
 
-if record:
+if mode == "r":
     leftdown = False
     rightdown = False
     actioncounter = 0
@@ -303,9 +312,12 @@ if record:
             while True:
                 time.sleep(0.2)
                 bindButton = keyboard.read_key()
+                """
                 if bindButton != keyboard.read_key():
                     break
+                """
                 print(bindButton)
+                break
                     
 
             """
@@ -330,7 +342,7 @@ if record:
             pos.close()
             break
 
-else:
+elif mode == "p":
     profilesL = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
     bindsF = open(os.getcwd()+f"/macro_files/profile_{profile}/binds.txt", "r", encoding="utf-8")
     bindsL = bindsF.read().split("\n")
@@ -535,3 +547,47 @@ else:
                             
                     time.sleep(0.2)
                     #endregion
+
+elif mode == "d":
+    print("Which profile do you want to delete from?")
+    while True:
+        time.sleep(0.2)
+        deleteProfile = keyboard.read_key()
+        if deleteProfile in ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]:
+            break
+    print(deleteProfile)
+
+    print("Which letter is the macro binded to?")
+    while True:
+        time.sleep(0.2)
+        bindButton = keyboard.read_key()
+        print(bindButton)
+        break
+
+    
+    
+    profilepath = os.getcwd()+f"/macro_files/profile_{deleteProfile}"
+
+    binds = open(profilepath+"/binds.txt", "r")
+    bindsR = binds.read()
+    binds.close()
+
+    bindsL = bindsR.split("\n")
+
+    for i in bindsL:
+        iS = i.split(" ")
+        if iS[0] == bindButton:
+            bindname = iS[1]
+            bindsL.remove(i)
+            break
+
+    os.remove(profilepath+"/binds.txt")
+    binds = open(profilepath+"/binds.txt", "a+")
+    binds.write("\n".join(bindsL))
+    binds.close()
+
+    os.remove(profilepath+f"/created_macros/{bindname}.txt")
+
+
+
+
