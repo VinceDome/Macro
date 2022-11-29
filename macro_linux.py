@@ -1,7 +1,24 @@
 import pyautogui
 import time, os
 import keyboard
-import win32api, win32con
+import subprocess
+
+def capsStatus():       
+    result = subprocess.run(["xset -q | grep Caps"], stdout=subprocess.PIPE)
+    passed = False
+    for i in result.stdout:
+        if not passed:
+            if i == "o":
+                passed = True
+                continue
+        
+        if i == "o":
+            index_after_o = result.stdout.index(i) + 1
+            if result.stout[index_after_o] == "f":
+                return False
+            else:
+                return True
+
 
 def createIfNot(path, pathType, extraAction="pass"):
     if not os.path.exists(path):
@@ -44,7 +61,7 @@ except FileNotFoundError:
     profile = None
 
 
-if win32api.GetKeyState(win32con.VK_CAPITAL) == 1:
+if capsStatus():
     pyautogui.press("capslock")
 
 while True:
@@ -109,10 +126,10 @@ while True:
         createIfNot(os.getcwd()+f"/macro_files/profile_{recordingProfile}/created_macros", "folder")
         createIfNot(os.getcwd()+f"/macro_files/profile_{recordingProfile}/binds.txt", "file")
 
-        bindpath = os.getcwd()+f"/macro_files/profile_{recordingProfile}/created_macros/{filename}.txt"
-        if os.path.exists(bindpath):
-            os.remove(bindpath)
-        pos = open(bindpath, "a+", encoding="utf-8")
+
+        if os.path.exists(os.getcwd()+f"/macro_files/profile_{recordingProfile}/created_macros/{filename}.txt"):
+            os.remove(os.getcwd()+f"/macro_files/profile_{recordingProfile}/created_macros/{filename}.txt")
+        pos = open(os.getcwd()+f"/macro_files/profile_{recordingProfile}/created_macros/{filename}.txt", "a+", encoding="utf-8")
 
         nodelete = input("Delete when activated? (y/n) ")
         if nodelete == "n":
@@ -125,16 +142,16 @@ while True:
                 keyboard.press_and_release("backspace")
                 if actioncounter != 0:
                     pos.write("\n")
-                pos.write("cursor "+str(win32api.GetCursorPos()[0])+" "+str(win32api.GetCursorPos()[1]))
+                pos.write("cursor "+str(pyautogui.position()[0])+" "+str(pyautogui.position()[1]))
                 actioncounter += 1
 
-                print(str(win32api.GetCursorPos()))
+                print(pyautogui.position())
                 time.sleep(0.2)
 
             elif keyboard.is_pressed("b"):
                 time.sleep(0.1)
                 keyboard.press_and_release("backspace")
-                x1, y1 = win32api.GetCursorPos()[0], win32api.GetCursorPos()[1]
+                x1, y1 = pyautogui.position()[0], pyautogui.position()[1]
                 if actioncounter != 0:
                     pos.write("\n")
 
@@ -143,7 +160,7 @@ while True:
                     if keyboard.is_pressed("b"):
                         break
 
-                x2, y2 = win32api.GetCursorPos()[0], win32api.GetCursorPos()[1]
+                x2, y2 = pyautogui.position()[0], pyautogui.position()[1]
                 pos.write("cursor rel "+str(x2-x1)+" "+str(y2-y1))
                 actioncounter += 1
                 #pos.write("\n"+str(win32api.GetCursorPos()))
@@ -201,12 +218,12 @@ while True:
                 keyboard.press_and_release("backspace")
                 if actioncounter != 0:
                     pos.write("\n")
-                pos.write("cursor "+str(win32api.GetCursorPos()[0])+" "+str(win32api.GetCursorPos()[1]))
+                pos.write("cursor "+str(pyautogui.position()[0])+" "+str(pyautogui.position()[1]))
                 pos.write("\nclick")
                 actioncounter += 2
                 #pos.write("\n"+str(win32api.GetCursorPos()))
 
-                print(str(win32api.GetCursorPos()))
+                print(str(pyautogui.position()))
                 print("click")
                 time.sleep(0.2)
             
@@ -235,53 +252,24 @@ while True:
                         break
                     except ValueError:
                         if wait == "until" or wait == "while":
-                            while True:
-                                screenshot = ("Does the image already exist? (y/n) ")
-                                if "n" in screenshot:
-                                    name = input("What do you want to name the image? ")
 
-                                    print("Move your cursor to the top left corner of the screenshot you want to take, then press enter!")
-                                    time.sleep(0.3)
-                                    while True:
-                                        if keyboard.is_pressed("enter"):
-                                            break
-                                    sTopleftx, sToplefty = win32api.GetCursorPos()[0], win32api.GetCursorPos()[1]
+                            name = input("What is the name of the image? ")
 
-                                    print("Move your cursor to the top left corner of the screenshot you want to take, then press enter!")
-                                    time.sleep(0.3)
-                                    while True:
-                                        if keyboard.is_pressed("enter"):
-                                            break
-                                        
-                                    sBottomrightx, sBottomrighty = win32api.GetCursorPos()[0], win32api.GetCursorPos()[1]
-
-                                    sBottomrightx -= sTopleftx
-                                    sBottomrighty -= sToplefty
-                                    
-                                    im = pyautogui.screenshot(r"{}".format(os.getcwd()+"\\macro_files\\images\\" + name + ".png"), region=(sTopleftx, sToplefty, sBottomrightx, sBottomrighty))
-                                    break
-
-                                elif "y" in screenshot:
-                                    name = input("What is the name of the image? ")
-                                    if os.path.exists(os.getcwd()+f"/macro_files/images/{name}"):
-                                        break
-                                    print("This image doesn't exist!")
-
-                            print("Move your cursor to the top left corner of the detection region, then press enter!")
+                            print("Move your cursor to the top left corner of the region, then press enter!")
                             time.sleep(0.3)
                             while True:
                                 if keyboard.is_pressed("enter"):
                                     break
 
-                            topleftx, toplefty = win32api.GetCursorPos()[0], win32api.GetCursorPos()[1]
+                            topleftx, toplefty = pyautogui.position()[0], pyautogui.position()[1]
                             
-                            print("Move your cursor to the bottom right corner of the detecition region, then press enter!")
+                            print("Move your cursor to the bottom right corner of the region, then press enter!")
                             time.sleep(0.3)
                             while True:
                                 if keyboard.is_pressed("enter"):
                                     break
 
-                            bottomrightx, bottomrighty = win32api.GetCursorPos()[0], win32api.GetCursorPos()[1]
+                            bottomrightx, bottomrighty = pyautogui.position()[0], pyautogui.position()[1]
 
                             if actioncounter != 0:
                                 pos.write("\n")
@@ -296,60 +284,34 @@ while True:
                 time.sleep(0.1)
                 keyboard.press_and_release("backspace")
                 
-                while True:
-                    screenshot = input("Does the image already exist? (y/n) ")
-                    
-                    if "n" in screenshot:
-                        name = input("What do you want to name the image? ")
-
-                        print("Move your cursor to the top left corner of the screenshot you want to take, then press enter!")
-                        time.sleep(0.3)
-                        while True:
-                            if keyboard.is_pressed("enter"):
-                                break
-                        sTopleftx, sToplefty = win32api.GetCursorPos()[0], win32api.GetCursorPos()[1]
-
-                        print("Move your cursor to the bottom right corner of the screenshot you want to take, then press enter!")
-                        time.sleep(0.3)
-                        while True:
-                            if keyboard.is_pressed("enter"):
-                                break
-                        sBottomrightx, sBottomrighty = win32api.GetCursorPos()[0], win32api.GetCursorPos()[1]
-
-                        sBottomrightx -= sTopleftx
-                        sBottomrighty -= sToplefty
-                        
-                        im = pyautogui.screenshot(r"{}".format(os.getcwd()+"\\macro_files\\images\\" + name + ".png"), region=(sTopleftx, sToplefty, sBottomrightx, sBottomrighty))
-                        break
-                    elif "y" in screenshot:
-                        name = input("What is the name of the image? ")
-                        if os.path.exists(os.getcwd()+f"/macro_files/images/{name}"):
-                            break
-                        print("This image doesn't exist!")
-
-                print("Move your cursor to the top left corner of the detection region, then press enter!")
-                time.sleep(0.3)
-                while True:
-                    if keyboard.is_pressed("enter"):
-                        break
-
-                topleftx, toplefty = win32api.GetCursorPos()[0], win32api.GetCursorPos()[1]
                 
-                print("Move your cursor to the bottom right corner of the detecition region, then press enter!")
+                name = input("What is the name of the image? ")
+
+                print("Move your cursor to the top left corner of the region, then press enter!")
                 time.sleep(0.3)
                 while True:
                     if keyboard.is_pressed("enter"):
                         break
 
-                bottomrightx, bottomrighty = win32api.GetCursorPos()[0], win32api.GetCursorPos()[1]
+
+                topleftx, toplefty = pyautogui.position()[0], pyautogui.position()[1]
+                
+
+                print("Move your cursor to the bottom right corner of the region, then press enter!")
+                time.sleep(0.3)
+                while True:
+                    if keyboard.is_pressed("enter"):
+                        break
+
+                bottomrightx, bottomrighty = pyautogui.position()[0], pyautogui.position()[1]
 
 
                 if actioncounter != 0:
                     pos.write("\n")
 
                 actioncounter += 1
-                pos.write(f"cursor {name}.png {topleftx} {toplefty} {bottomrightx} {bottomrighty}")
-                print(f"cursor {name}.png {topleftx} {toplefty} {bottomrightx} {bottomrighty}")
+                pos.write(f"cursor {name} {topleftx} {toplefty} {bottomrightx} {bottomrighty}")
+                print(f"cursor {name} {topleftx} {toplefty} {bottomrightx} {bottomrighty}")
                 time.sleep(0.2)
 
             elif keyboard.is_pressed("q"):
@@ -418,7 +380,7 @@ while True:
 
         while True: 
             time.sleep(0.02)
-            if win32api.GetKeyState(win32con.VK_CAPITAL) == 1:
+            if capsStatus():
                 if keyboard.is_pressed("escape"):
                     break
 
@@ -502,16 +464,16 @@ while True:
                                 break
                         
                             if i == "click":
-                                win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,0,0)
+                                pyautogui.mouseDown()
                                 time.sleep(0.01)
-                                win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                                pyautogui.mouseUp()
                                 time.sleep(0.01)
                                 continue
 
                             
                             poslist = i.split(" ")
                             if poslist[0] == "type":
-                                if win32api.GetKeyState(win32con.VK_CAPITAL) == 1:
+                                if capsStatus():
                                     pyautogui.press("capslock")
                                 time.sleep(0.01)
 
@@ -531,7 +493,7 @@ while True:
                                             if theresmore:
                                                 keyboard.press_and_release(" ")
                                                 
-                                if win32api.GetKeyState(win32con.VK_CAPITAL) == 0:
+                                if not capsStatus():
                                     pyautogui.press("capslock")
                                 time.sleep(0.05)
                                 continue
@@ -541,7 +503,7 @@ while True:
                                     for i in range(3):
                                         if i != 0:
                                             poslistNUMS.append(int(poslist[i]))
-                                    win32api.SetCursorPos(poslistNUMS)
+                                    pyautogui.moveTo(poslistNUMS)
 
                                 elif len(poslist) == 4:
                                     if poslist[1] == "rel":
@@ -549,17 +511,17 @@ while True:
                                             if i != 0 and i != 1:
                                                 poslistNUMS.append(int(poslist[i]))
 
-                                        x, y = win32api.GetCursorPos()[0], win32api.GetCursorPos()[1]
+                                        x, y = pyautogui.position()[0], pyautogui.position()[1]
                                         poslistNUMS[0] += x
                                         poslistNUMS[1] += y      
-                                        win32api.SetCursorPos(poslistNUMS)
+                                        pyautogui.moveTo(poslistNUMS)
 
                                 elif len(poslist) == 6:
                                     location = pyautogui.locateOnScreen(os.getcwd()+"\\macro_files\\images\\"+poslist[1], region=(int(poslist[2]),int(poslist[3]), int(poslist[4]), int(poslist[5])), confidence = 0.85)
                                     if location == None:
                                         continue
                                     locationC = pyautogui.center(location)
-                                    win32api.SetCursorPos(locationC)
+                                    pyautogui.moveTo(locationC)
                                                     
                             elif poslist[0] == "wait":
                                 if len(poslist) <= 2:
@@ -596,12 +558,23 @@ while True:
                                             location = pyautogui.locateOnScreen(os.getcwd()+"\\macro_files\\images\\"+poslist[len(poslist)-5], region=(int(poslist[len(poslist)-4]),int(poslist[len(poslist)-3]), int(poslist[len(poslist)-2]), int(poslist[len(poslist)-1])), confidence = 0.85)
                                             if location == None:    
                                                 break
-                                            
+
+
+                            elif poslist[0] in ["down", "up"]:
+                                rest = []
+                                for i in poslist:
+                                    if i == poslist[0]:
+                                        continue
+                                    rest.append(i)
+                                exec("pyautogui.mouse"+poslist[0][0].upper()+"".join(rest)+f"(button={poslist[1]})")
+
+
+                            """
                             elif poslist[0] == "down": 
                                 if poslist[1] == "left":
-                                    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,0,0)
+                                    pyautogui.mouseDown()
                                 elif poslist[1] == "right":
-                                    win32api.mouse_event(win32con.MOUSEEVENTF_RIGHTDOWN,0,0)
+                                    pyautogui.mouseDown()
                                 time.sleep(0.15)
                                 
                             elif poslist[0] == "up":
@@ -610,7 +583,7 @@ while True:
                                     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
                                 elif poslist[1] == "right":
                                     win32api.mouse_event(win32con.MOUSEEVENTF_RIGHTUP,0,0)
-                                
+                            """ 
                                 
                         time.sleep(0.2)
                         #endregion
@@ -654,7 +627,3 @@ while True:
         binds.close()
 
         os.remove(profilepath+f"/created_macros/{bindname}.txt")
-
-
-
-
