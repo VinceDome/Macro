@@ -2,6 +2,8 @@ import pyautogui
 import time, os
 import keyboard
 import win32api, win32con
+import cv2
+import numpy as np
 
 def createIfNot(path, pathType, extraAction="pass"):
     if not os.path.exists(path):
@@ -35,6 +37,8 @@ createIfNot(os.getcwd()+f"/macro_files", "folder")
 createIfNot(os.getcwd()+f"/macro_files/data.txt", "file")
 
 createIfNot(os.getcwd()+f"/macro_files/images", "folder")
+
+
 
 try:
     data = open(os.getcwd()+f"/macro_files/data.txt", "r")
@@ -234,7 +238,7 @@ while True:
                         pos.write(f"wait {wait}")
                         break
                     except ValueError:
-                        if wait == "until" or wait == "while":
+                        if wait in ["until", "while"]:
                             while True:
                                 screenshot = ("Does the image already exist? (y/n) ")
                                 if "n" in screenshot:
@@ -263,7 +267,7 @@ while True:
 
                                 elif "y" in screenshot:
                                     name = input("What is the name of the image? ")
-                                    if os.path.exists(os.getcwd()+f"/macro_files/images/{name}"):
+                                    if os.path.exists(os.getcwd()+f"/macro_files/images/{name}.png"):
                                         break
                                     print("This image doesn't exist!")
 
@@ -275,7 +279,7 @@ while True:
 
                             topleftx, toplefty = win32api.GetCursorPos()[0], win32api.GetCursorPos()[1]
                             
-                            print("Move your cursor to the bottom right corner of the detecition region, then press enter!")
+                            print("Move your cursor to the bottom right corner of the detection region, then press enter!")
                             time.sleep(0.3)
                             while True:
                                 if keyboard.is_pressed("enter"):
@@ -323,7 +327,7 @@ while True:
                         break
                     elif "y" in screenshot:
                         name = input("What is the name of the image? ")
-                        if os.path.exists(os.getcwd()+f"/macro_files/images/{name}"):
+                        if os.path.exists(os.getcwd()+f"/macro_files/images/{name}.png"):
                             break
                         print("This image doesn't exist!")
 
@@ -502,9 +506,9 @@ while True:
                                 break
                         
                             if i == "click":
-                                win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,0,0)
+                                pyautogui.mouseDown()
                                 time.sleep(0.01)
-                                win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                                pyautogui.mouseUp()
                                 time.sleep(0.01)
                                 continue
 
@@ -521,6 +525,15 @@ while True:
                                             time.sleep(0.01)
                                             keyboard.press_and_release("enter")
                                             continue
+                                        elif a == "left":
+                                            time.sleep(0.01)
+                                            keyboard.press_and_release("left_arrow")
+                                            continue
+                                        elif a == "right":
+                                            time.sleep(0.01)
+                                            keyboard.press_and_release("right_arrow")
+                                            continue
+
                                         keyboard.write(a)
                                         if not a == poslist[len(poslist)-1]:
                                             theresmore = False
@@ -541,7 +554,7 @@ while True:
                                     for i in range(3):
                                         if i != 0:
                                             poslistNUMS.append(int(poslist[i]))
-                                    win32api.SetCursorPos(poslistNUMS)
+                                    pyautogui.moveTo(poslistNUMS[0], poslistNUMS[1])
 
                                 elif len(poslist) == 4:
                                     if poslist[1] == "rel":
@@ -555,7 +568,12 @@ while True:
                                         win32api.SetCursorPos(poslistNUMS)
 
                                 elif len(poslist) == 6:
-                                    location = pyautogui.locateOnScreen(os.getcwd()+"\\macro_files\\images\\"+poslist[1], region=(int(poslist[2]),int(poslist[3]), int(poslist[4]), int(poslist[5])), confidence = 0.85)
+                                    path = os.path.join(os.getcwd(), "macro_files", "images", poslist[1])
+                                 
+                                    # fr"""{os.getcwd()}\\macro_files\\images\\{poslist[1]}"""
+                                    img = cv2.imdecode(np.fromfile(path, dtype=np.uint8), 0)
+
+                                    location = pyautogui.locateOnScreen(img, region=(int(poslist[2]),int(poslist[3]), int(poslist[4]), int(poslist[5])), confidence = 0.85)
                                     if location == None:
                                         continue
                                     locationC = pyautogui.center(location)
@@ -576,8 +594,12 @@ while True:
                                                 time.sleep(2)
                                                 os.system("cls")
                                                 break
+
+                                            path = os.path.join(os.getcwd(), "macro_files", "images", poslist[len(poslist)-5])
+                                 
                                             
-                                            location = pyautogui.locateOnScreen(os.getcwd()+"\\macro_files\\images\\"+poslist[len(poslist)-5], region=(int(poslist[len(poslist)-4]),int(poslist[len(poslist)-3]), int(poslist[len(poslist)-2]), int(poslist[len(poslist)-1])), confidence = 0.85)
+                                            img = cv2.imdecode(np.fromfile(path, dtype=np.uint8), 0)
+                                            location = pyautogui.locateOnScreen(img, region=(int(poslist[len(poslist)-4]),int(poslist[len(poslist)-3]), int(poslist[len(poslist)-2]), int(poslist[len(poslist)-1])), confidence = 0.85)
 
                                             if location != None:    
                                                 break
@@ -592,26 +614,31 @@ while True:
                                                 time.sleep(2)
                                                 os.system("cls")
                                                 break
-
-                                            location = pyautogui.locateOnScreen(os.getcwd()+"\\macro_files\\images\\"+poslist[len(poslist)-5], region=(int(poslist[len(poslist)-4]),int(poslist[len(poslist)-3]), int(poslist[len(poslist)-2]), int(poslist[len(poslist)-1])), confidence = 0.85)
+                                            
+                                            path = os.path.join(os.getcwd(), "macro_files", "images", poslist[len(poslist)-5])
+                                            
+                                            img = cv2.imdecode(np.fromfile(path, dtype=np.uint8), 0)
+                                            location = pyautogui.locateOnScreen(img, region=(int(poslist[len(poslist)-4]),int(poslist[len(poslist)-3]), int(poslist[len(poslist)-2]), int(poslist[len(poslist)-1])), confidence = 0.85)
                                             if location == None:    
                                                 break
                                             
                             elif poslist[0] == "down": 
+                                time.sleep(0.15)
                                 if poslist[1] == "left":
-                                    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,0,0)
+                                    pyautogui.mouseDown()
                                 elif poslist[1] == "right":
-                                    win32api.mouse_event(win32con.MOUSEEVENTF_RIGHTDOWN,0,0)
+                                    pyautogui.mouseDown(button="right")
                                 time.sleep(0.15)
                                 
                             elif poslist[0] == "up":
                                 time.sleep(0.15)
                                 if poslist[1] == "left":
-                                    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                                    pyautogui.mouseUp()
                                 elif poslist[1] == "right":
-                                    win32api.mouse_event(win32con.MOUSEEVENTF_RIGHTUP,0,0)
-                                
-                                
+                                    pyautogui.mouseUp(button="right")
+
+                        if "capsoff" in posRL[0]:
+                            pyautogui.press("capslock")
                         time.sleep(0.2)
                         #endregion
 
